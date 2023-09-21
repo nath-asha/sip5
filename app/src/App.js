@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'; // Make sure to include Switch here
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Contact from './components/Contact';
 import About from './components/About';
@@ -28,17 +28,9 @@ function App() {
           </ul>
         </nav>
 
-        <Switch>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <Route path="/contact" component={Contact} />
+        <Route path="/about" component={About} />
+        <Route exact path="/" component={Home} />
       </div>
     </Router>
   );
